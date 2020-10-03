@@ -1,0 +1,36 @@
+- key: ms-sql-tds-rpc-requests
+  source: https://wiki.wireshark.org/SampleCaptures#MySQL_protocol
+  file: dataset/ms-sql-tds-rpc-requests.cap
+  desc: a small capture of mysql rpc traffic from wireshark sample captures.
+  size: 17000
+
+- key: nfsv3
+  source: https://wiki.wireshark.org/SampleCaptures#MySQL_protocol
+  file: dataset/nfsv3.pcap
+  desc: a small capture of nfsv3 traffic from wireshark sample captures.
+  size: 25000
+
+- key: pgsql-jdbc
+  source: https://wiki.wireshark.org/SampleCaptures#PostgreSQL_v3_Frontend.2FBackend_Protocol
+  file: dataset/pgsql-jdbc.pcap
+  desc: a small capture of pgsql traffic from wireshark sample captures.
+  size: 4700000
+
+- key: smallflow
+  source: http://tcpreplay.appneta.com/wiki/captures.html
+  file: dataset/smallFlows.pcap
+  desc: This is a synthetic capture which is a combination of several captures containing a few different applications.
+  size: 9700000
+
+
+- key: tftp_wrq
+  source: https://wiki.wireshark.org/SampleCaptures#TFTP
+  file: dataset/tftp_wrq.pcap
+  desc: a small capture of  tftp traffic from wireshark sample captures.
+  size: 31000
+
+- key: wireshark_http
+  source: https://wiki.wireshark.org/SampleCaptures#HyperText_Transport_Protocol_.28HTTP.29
+  file: dataset/wireshark_http.cap
+  desc: a small capture of  http traffic from wireshark sample captures.
+  size: 26000

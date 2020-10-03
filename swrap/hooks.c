@@ -43,12 +43,15 @@ static void* load_sym(char* symname, void* proxyfunc) {
 typedef ssize_t (*sendto_t) (int sockfd, const void *buf, size_t len, int flags,
 			     const struct sockaddr *dest_addr, socklen_t addrlen);
 typedef ssize_t (*send_t) (int sockfd, const void *buf, size_t len, int flags);
+typedef ssize_t (*write_t)(int fd, const void *buf, size_t count);
 
 sendto_t true_sendto;
+write_t true_write;
 send_t true_send;
 
 ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,
 	       const struct sockaddr *dest_addr, socklen_t addrlen) {
+    INIT();
     fprintf(stdout,"hello world\n");
     return 0 ;
 }
@@ -56,11 +59,19 @@ ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,
 
 ssize_t send(int sockfd, const void *buf, size_t len, int flags){
     INIT();
-    fprintf(stdout,"len:%d content:%s\n",len,buf);
+    fprintf(stdout,"len:%ld content:%s\n",len,buf);
     return true_send(sockfd,buf,len,flags);
 }
+
+ssize_t write(int fd, const void *buf, size_t count){
+    INIT();
+    fprintf(stdout,"write %ld bytes\n",count);
+    return true_write(fd,buf,count);
+}
+
 static void setup_hooks(void) {
 	SETUP_SYM(sendto);
+	SETUP_SYM(write);
 	SETUP_SYM(send);
 }
 
