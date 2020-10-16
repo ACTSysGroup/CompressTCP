@@ -1,0 +1,9 @@
+username: root
+password: Lhc8848444
+host: '[2001:da8:203:80:3b3d:1f1:ac06:6aa7]'
+port: '3306'
+database: libgen
+batch: 200
+iteration: 10
+routine:  24
+
